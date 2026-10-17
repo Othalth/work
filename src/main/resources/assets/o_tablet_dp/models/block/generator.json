@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "o_tablet_dp:block/generator_top",
+    "side": "o_tablet_dp:block/generator_side"
+  }
+}

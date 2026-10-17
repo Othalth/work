@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "o_tablet_dp",
+  "version": "1.0.0",
+  "name": "O-Tablet-dp",
+  "description": "Tablet, generator and blackout system for a Danganronpa-style Minecraft game.",
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.otabletdp.OTabletDp"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

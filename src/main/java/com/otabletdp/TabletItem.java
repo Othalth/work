@@ -17,6 +17,9 @@ public class TabletItem extends Item {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
         if (!level.isClientSide() && player instanceof ServerPlayer sp) {
+            if (stack.is(ModContent.MASTERMIND_TABLET)) {
+                TabletGui.activateMaster(sp);
+            }
             TabletGui.openMain(sp);
         }
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());

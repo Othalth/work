@@ -4,6 +4,10 @@ import java.util.List;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
@@ -69,5 +73,33 @@ public final class Util {
 
     public static void say(ServerPlayer player, Component message) {
         player.sendSystemMessage(message);
+    }
+
+    public static ServerLevel level(MinecraftServer server, String dimension) {
+        return server.getLevel(ResourceKey.create(Registries.DIMENSION, ResourceLocation.parse(dimension)));
+    }
+
+    /** The owner, after using a Master Mind Tablet: tagged and an operator. */
+    public static boolean isMaster(ServerPlayer player) {
+        return player.getTags().contains("mastermind") && player.hasPermissions(2);
+    }
+
+    /** Border colour for this player's menus. */
+    public static Item paneFor(ServerPlayer player) {
+        if (isMaster(player)) return Items.RED_STAINED_GLASS_PANE;
+        int index = Ultimates.of(player);
+        return index >= 1 ? Ultimates.info(index).pane() : Items.GRAY_STAINED_GLASS_PANE;
+    }
+
+    /** Run a datapack function as the server. */
+    public static void fn(MinecraftServer server, String function) {
+        cmd(server, "function " + function);
+    }
+
+    /** Run a datapack function as this player (at their position). */
+    public static void fnAs(ServerPlayer player, String function) {
+        if (player.getServer() == null) return;
+        player.getServer().getCommands().performPrefixedCommand(
+                player.createCommandSourceStack().withPermission(2).withSuppressedOutput(), "function " + function);
     }
 }

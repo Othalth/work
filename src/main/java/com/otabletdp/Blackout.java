@@ -223,7 +223,8 @@ public final class Blackout {
 
     private static void applyEffects(MinecraftServer server) {
         for (ServerPlayer p : server.getPlayerList().getPlayers()) {
-            boolean exempt = p.isSpectator() || (causer != null && causer.equals(p.getUUID()));
+            boolean exempt = p.isSpectator() || p.getTags().contains("mastermind")
+                    || (causer != null && causer.equals(p.getUUID()));
             MobEffectInstance current = p.getEffect(MobEffects.BLINDNESS);
             boolean ours = current != null && current.getAmplifier() == MARK;
             if (exempt) {

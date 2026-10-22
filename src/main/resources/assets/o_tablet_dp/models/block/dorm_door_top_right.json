@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "o_tablet_dp:block/dorm_door_bottom",
+    "top": "o_tablet_dp:block/dorm_door_top"
+  }
+}

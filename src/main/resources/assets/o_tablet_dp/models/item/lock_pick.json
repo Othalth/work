@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "o_tablet_dp:item/lock_pick"
+  }
+}

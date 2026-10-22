@@ -1,5 +1,14 @@
 {
   "item.o_tablet_dp.tablet": "O-Tablet-dp",
   "item.o_tablet_dp.wrench": "Wrench",
-  "block.o_tablet_dp.generator": "Generator"
+  "block.o_tablet_dp.generator": "Generator",
+  "block.o_tablet_dp.location_marker": "Location Marker",
+  "item.o_tablet_dp.screwdriver": "Screwdriver",
+  "item.o_tablet_dp.poison_bottle": "Poison Bottle",
+  "item.o_tablet_dp.wooden_hammer": "Wooden Hammer",
+  "item.o_tablet_dp.blank_key": "Blank Key",
+  "item.o_tablet_dp.lock_pick": "Lock Pick",
+  "block.o_tablet_dp.dorm_door": "Dorm Door",
+  "item.o_tablet_dp.mastermind_tablet": "Master Mind Tablet",
+  "block.o_tablet_dp.trial_teleporter": "Class Trial Teleporter"
 }
